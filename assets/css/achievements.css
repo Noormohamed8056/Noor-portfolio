@@ -1,0 +1,736 @@
+/* achievements.css */
+
+/* --- Base & Reset specific to this page --- */
+.achievements-page {
+    background-color: #000;
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* --- Floating Navbar --- */
+.ach-nav {
+    position: fixed;
+    top: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1200px;
+    height: 60px;
+    background-color: rgba(15, 15, 15, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+    z-index: 100;
+}
+
+.ach-nav-logo {
+    font-family: var(--font-display, 'Instrument Serif', serif);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+}
+
+.ach-nav-back {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--on-dark-soft, #aaa);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.ach-nav-back:hover {
+    color: #fff;
+}
+
+.ach-nav-contact {
+    background-color: #fff;
+    color: #000;
+    padding: 8px 16px;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: background-color 0.3s ease;
+}
+
+.ach-nav-contact:hover {
+    background-color: #e0e0e0;
+}
+
+/* --- Section A & B: Hero & Grid morph --- */
+.ach-hero-wrap {
+    position: relative;
+    width: 100%;
+    height: 180vh; /* space for scrolling the morph */
+}
+
+.ach-hero {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 2;
+    pointer-events: none; /* Let clicks pass through to floating cards if needed */
+}
+
+.ach-hero-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: auto;
+}
+
+.ach-badge {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+    color: #ddd;
+}
+
+.ach-title {
+    font-family: var(--font-body, 'Inter', sans-serif);
+    font-weight: 800;
+    font-size: clamp(3rem, 7vw, 6rem);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #ffffff 0%, #888888 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.ach-subtitle {
+    font-size: 1.25rem;
+    color: #999;
+    max-width: 500px;
+    line-height: 1.5;
+    margin-bottom: 3rem;
+}
+
+.ach-scroll-hint {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    animation: bounce 2s infinite ease-in-out;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+}
+
+/* Floating Cards container (absolute over the sticky hero) */
+.ach-floating-cards {
+    position: fixed; /* fix to viewport during scroll */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    pointer-events: none; /* only pointer-events on individual cards if we want hover, but they are just visual in hero */
+}
+
+.ach-float-card {
+    position: absolute;
+    width: 260px; /* Small size for floating */
+    aspect-ratio: 1.414 / 1;
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    pointer-events: auto;
+    overflow: hidden;
+    /* initial hidden state before JS sets it */
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+    color: #000;
+}
+
+.ach-float-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.15); /* Slightly dimmed so heading stands out */
+    pointer-events: none;
+    transition: background 0.3s ease;
+}
+
+.ach-float-card:hover::after {
+    background: rgba(0,0,0,0); /* Brighten on hover */
+}
+
+/* Base styling for images inside float card */
+.ach-float-card img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 2;
+}
+
+/* Hidden Grid Target used for measuring final positions */
+.ach-grid-target {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    /* It sits at the bottom of the 180vh wrapper, so when we scroll there, the floating cards match this layout */
+    opacity: 0; 
+    pointer-events: none;
+    padding-bottom: 4rem; /* some padding before archive */
+}
+
+.ach-grid-slot {
+    width: 100%;
+    aspect-ratio: 1.414 / 1;
+}
+
+/* --- Section C: Archive --- */
+.ach-archive {
+    position: relative;
+    z-index: 10;
+    background-color: #000;
+    padding: 4rem 0 8rem 0;
+}
+
+.ach-archive-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.ach-archive-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.ach-archive-line {
+    width: 40px;
+    height: 2px;
+    background-color: #fff;
+    margin-bottom: 4rem;
+}
+
+.ach-archive-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 4rem;
+}
+
+/* Sidebar */
+.ach-sidebar {
+    width: 250px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 100px;
+}
+
+.ach-filters {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.ach-filter-btn {
+    background: transparent;
+    border: none;
+    color: #888;
+    text-align: left;
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.ach-filter-btn:hover {
+    color: #fff;
+    background-color: rgba(255,255,255,0.05);
+}
+
+.ach-filter-btn.active {
+    color: #fff;
+    background-color: rgba(255,255,255,0.08);
+}
+
+.ach-filter-btn.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 60%;
+    width: 3px;
+    background-color: #fff;
+    border-radius: 0 4px 4px 0;
+}
+
+.ach-count {
+    background-color: rgba(255,255,255,0.1);
+    color: #ddd;
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 100px;
+}
+
+/* Main Area */
+.ach-main {
+    flex-grow: 1;
+    min-width: 0;
+}
+
+.ach-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+    background-color: #111;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.ach-stats {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.ach-stat-chip {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #aaa;
+    font-size: 0.85rem;
+}
+
+.ach-stat-chip span {
+    color: #fff;
+    font-weight: 600;
+}
+
+.ach-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.ach-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.ach-search i {
+    position: absolute;
+    left: 12px;
+    color: #888;
+}
+
+.ach-search input {
+    background-color: #1a1a1a;
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #fff;
+    padding: 8px 12px 8px 36px;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+    width: 200px;
+}
+
+.ach-search input:focus {
+    border-color: rgba(255,255,255,0.3);
+}
+
+.ach-sort {
+    background: #1a1a1a;
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #fff;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.ach-sort:hover {
+    background: #2a2a2a;
+}
+
+/* Archive Grid */
+.ach-archive-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.ach-card {
+    background-color: #0a0a0a;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.ach-card:hover {
+    border-color: var(--accent, #3b82f6);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.ach-card-img-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1.414 / 1;
+    background-color: #fff; /* For fallback HTML */
+    overflow: hidden;
+}
+
+.ach-card-img-wrap img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 2;
+    transition: transform 0.5s ease;
+}
+
+.ach-card:hover .ach-card-img-wrap img {
+    transform: scale(1.05);
+}
+
+.ach-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, transparent 40%, rgba(10,10,10,0.9) 100%);
+    z-index: 3;
+    pointer-events: none;
+}
+
+.ach-card-tag {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(4px);
+    color: #fff;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 4px 10px;
+    border-radius: 100px;
+    z-index: 4;
+}
+
+.ach-card-preview-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 32px;
+    height: 32px;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(4px);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 4;
+    transition: background 0.3s ease;
+}
+
+.ach-card-preview-btn:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+.ach-card-cred {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    color: rgba(255,255,255,0.5);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    z-index: 4;
+}
+
+.ach-card-date {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    color: #fff;
+    background: rgba(255,255,255,0.1);
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+    z-index: 4;
+}
+
+.ach-card-body {
+    padding: 1.5rem;
+    flex-grow: 1;
+}
+
+.ach-card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+}
+
+.ach-card-org {
+    font-size: 0.85rem;
+    color: #888;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.ach-card-footer {
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.ach-card-expand-btn {
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #666;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.ach-card-expand-btn:hover {
+    color: #fff;
+}
+
+.ach-card-expand-btn i {
+    transition: transform 0.3s ease;
+}
+
+.ach-card.is-expanded .ach-card-expand-btn i {
+    transform: rotate(180deg);
+}
+
+.ach-card-expanded-content {
+    height: 0;
+    overflow: hidden;
+    padding: 0 1.5rem;
+    transition: height 0.4s ease, padding 0.4s ease;
+}
+
+.ach-card.is-expanded .ach-card-expanded-content {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+.ach-card-desc {
+    font-size: 0.85rem;
+    color: #999;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.ach-card-view-btn {
+    display: inline-block;
+    background-color: #222;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.8rem;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.ach-card-view-btn:hover {
+    background-color: #444;
+}
+
+.ach-no-results {
+    text-align: center;
+    padding: 4rem 0;
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.ach-no-results i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #444;
+}
+
+/* Footer */
+.ach-footer {
+    text-align: center;
+    padding: 4rem 0;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.ach-footer-pill {
+    display: inline-flex;
+    background-color: #111;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 24px;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.3s ease;
+}
+
+.ach-footer-pill:hover {
+    background-color: #222;
+    border-color: rgba(255,255,255,0.3);
+}
+
+.ach-footer-copy {
+    font-size: 0.75rem;
+    color: #555;
+}
+
+/* Fallback Card styles for Floating elements (re-using HTML logic from main.css via classes) */
+.ach-float-card .cert-fb-issuer { font-size: 0.5rem; font-weight: 700; color: #666; text-transform: uppercase; }
+.ach-float-card .cert-fb-title-wrap { text-align: center; margin: 0.5rem 0; }
+.ach-float-card .cert-fb-sub { font-size: 0.5rem; color: #777; text-transform: uppercase; }
+.ach-float-card .cert-fb-name { font-family: Georgia, serif; font-style: italic; font-size: 1rem; color: #111; margin-bottom: 0.25rem; }
+.ach-float-card .cert-fb-title { font-weight: 700; font-size: 0.6rem; color: #000; line-height: 1.2; }
+.ach-float-card .cert-fb-line { height: 1px; background-color: #eee; width: 60%; margin: 0 auto 0.25rem auto; }
+.ach-float-card .cert-fb-seal { align-self: flex-end; width: 20px; height: 20px; background-color: var(--accent, #d4af37); border-radius: 50%; }
+
+/* Media Queries */
+@media (max-width: 991px) {
+    .ach-hero-wrap {
+        height: auto;
+    }
+    .ach-hero {
+        position: relative;
+        height: auto;
+        padding: 8rem 0 4rem;
+    }
+    .ach-floating-cards, .ach-grid-target {
+        display: none; /* Hide complex animation elements on tablet/mobile */
+    }
+    
+    .ach-archive-layout {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .ach-sidebar {
+        width: 100%;
+        position: static;
+    }
+    .ach-filters {
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 1rem;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    .ach-filters::-webkit-scrollbar {
+        display: none;
+    }
+    .ach-filter-btn {
+        white-space: nowrap;
+        background-color: #111;
+        border: 1px solid rgba(255,255,255,0.05);
+    }
+    .ach-filter-btn.active {
+        background-color: #222;
+        border-color: rgba(255,255,255,0.2);
+    }
+    .ach-filter-btn.active::before {
+        display: none; /* Remove left bar */
+    }
+}
+
+@media (max-width: 767px) {
+    .ach-archive-grid {
+        grid-template-columns: 1fr;
+    }
+    .ach-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .ach-stats {
+        justify-content: space-between;
+    }
+    .ach-controls {
+        justify-content: space-between;
+    }
+    .ach-search {
+        flex-grow: 1;
+    }
+    .ach-search input {
+        width: 100%;
+    }
+}
+
+/* removed prefers-reduced-motion */

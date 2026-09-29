@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificates & Awards — Noor Mohamed A</title>
+    <meta name="description" content="A visual journey through certifications and achievements by Noor Mohamed A.">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/main.css?v=37">
+    <link rel="stylesheet" href="assets/css/achievements.css">
+</head>
+<body class="theme-dark achievements-page">
+    
+    <!-- Page Transition Overlay -->
+    <div id="page-transition-overlay" style="position: fixed; inset: 0; background: black; z-index: 9999; pointer-events: none; transition: opacity 0.4s ease; opacity: 1;"></div>
+
+    <!-- Floating Navbar -->
+    <nav class="ach-nav">
+        <a href="index.html" class="ach-nav-logo back-link">NOOR</a>
+        <a href="index.html#cert" class="ach-nav-back back-link"><i class="ph ph-arrow-left"></i> Back</a>
+        <a href="index.html#contact" class="ach-nav-contact back-link">LET'S TALK</a>
+    </nav>
+
+    <!-- Section A & B: Hero & Grid Morph -->
+    <div class="ach-hero-wrap">
+        <!-- The Floating Tilted Cards -->
+        <div class="ach-floating-cards" aria-hidden="true">
+            <!-- Rendered via JS -->
+        </div>
+        
+        <section class="ach-hero">
+            <div class="ach-hero-content">
+                <div class="ach-badge">Professional Milestones</div>
+                <h1 class="ach-title">Certificates &<br>Awards</h1>
+                <p class="ach-subtitle">A visual journey through certifications and achievements.</p>
+                <div class="ach-scroll-hint">
+                    Scroll to Explore
+                    <i class="ph ph-caret-down"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hidden Grid for Measurements (Section B) -->
+        <div class="ach-grid-target">
+            <!-- 9 slots rendered via JS -->
+        </div>
+    </div>
+
+    <!-- Section C: The Archive -->
+    <section class="ach-archive">
+        <div class="ach-archive-container">
+            
+            <div class="ach-archive-label">THE ARCHIVE</div>
+            <div class="ach-archive-line"></div>
+
+            <div class="ach-archive-layout">
+                
+                <!-- Sidebar -->
+                <aside class="ach-sidebar">
+                    <div class="ach-filters">
+                        <button class="ach-filter-btn active" data-filter="All">All <span class="ach-count" id="count-all">0</span></button>
+                        <button class="ach-filter-btn" data-filter="Certifications">Certifications <span class="ach-count" id="count-cert">0</span></button>
+                        <button class="ach-filter-btn" data-filter="Internships">Internships <span class="ach-count" id="count-int">0</span></button>
+                        <button class="ach-filter-btn" data-filter="Participation & Achievements">Participation & Achievements <span class="ach-count" id="count-part">0</span></button>
+                    </div>
+                </aside>
+
+                <!-- Main Area -->
+                <main class="ach-main">
+                    
+                    <div class="ach-toolbar">
+                        <div class="ach-stats">
+                            <div class="ach-stat-chip"><i class="ph ph-stack"></i> <span id="stat-total">0</span> Total</div>
+                            <div class="ach-stat-chip"><i class="ph ph-certificate"></i> <span id="stat-cert">0</span> Certs</div>
+                            <div class="ach-stat-chip"><i class="ph ph-briefcase"></i> <span id="stat-int">0</span> Internships</div>
+                        </div>
+                        <div class="ach-controls">
+                            <div class="ach-search">
+                                <i class="ph ph-magnifying-glass"></i>
+                                <input type="text" id="ach-search-input" placeholder="Search...">
+                            </div>
+                            <button id="ach-sort-btn" class="ach-sort" aria-label="Sort A-Z">
+                                <i class="ph ph-sort-ascending"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="ach-archive-grid" id="ach-archive-grid">
+                        <!-- Cards injected via JS -->
+                    </div>
+                    
+                    <div id="ach-no-results" class="ach-no-results" style="display: none;">
+                        <i class="ph ph-ghost"></i>
+                        <p>No certificates match your search.</p>
+                    </div>
+
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="ach-footer">
+        <a href="index.html#cert" class="ach-footer-pill back-link">Back</a>
+        <div class="ach-footer-copy">&copy; 2026 Noor Mohamed A. All rights reserved.</div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div id="ach-lightbox" class="cert-lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="cert-lightbox-bg"></div>
+        <button class="cert-lightbox-close" aria-label="Close lightbox"><i class="ph ph-x"></i></button>
+        <div class="cert-lightbox-content"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="assets/js/achievements.js?v=22"></script>
+</body>
+</html>

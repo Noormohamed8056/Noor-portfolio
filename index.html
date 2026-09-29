@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noor Mohamed A — Full-Stack Developer Portfolio</title>
+    <meta name="description" content="Portfolio of Noor Mohamed A, Full-Stack Developer & AI-Driven Product Builder from Salem, India.">
+    <!-- Open Graph / Twitter placeholders -->
+    <meta property="og:title" content="Noor Mohamed A — Full-Stack Developer">
+    <meta property="og:description" content="Portfolio of Noor Mohamed A, Full-Stack Developer & AI-Driven Product Builder.">
+    <meta property="og:image" content="assets/images/og-cover.jpg">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon (Data URI placeholder for N) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%232F5BFF%22 font-family=%22Arial%22>N</text></svg>">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/main.css?v=37">
+    
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Person",
+      "name": "Noor Mohamed A",
+      "jobTitle": "Full-Stack Developer",
+      "url": "https://your-deployment-url.com",
+      "sameAs": [
+        "https://github.com/Noormohamed8056",
+        "https://linkedin.com/in/noor-mohamed07"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Salem",
+        "addressRegion": "Tamil Nadu",
+        "addressCountry": "India"
+      }
+    }
+    </script>
+</head>
+<body>
+    <h1 class="sr-only">Noor Mohamed A — Full-Stack Developer</h1>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"><span class="cursor-text">VIEW</span></div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress"></div>
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-counter">
+            <span class="preloader-word">NOOR MOHAMED</span> <span id="loader-count">0</span>%
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <header class="site-header">
+        <div class="nav-container">
+            <a href="#top" class="nav-logo cursor-hover">NOOR</a>
+            
+            <nav class="nav-links desktop-only">
+                <a href="#about" class="nav-link cursor-hover">About</a>
+                <a href="#expertise" class="nav-link cursor-hover">Expertise</a>
+                <a href="#projects" class="nav-link cursor-hover">Projects</a>
+                <a href="#what-i-build" class="nav-link cursor-hover">What I Build</a>
+                <a href="#contact" class="nav-link cursor-hover">Contact</a>
+            </nav>
+            
+            <div class="nav-actions">
+                <button class="menu-btn cursor-hover" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+                    <i class="ph ph-dots-nine"></i>
+                </button>
+                <a href="#contact" class="btn-primary cursor-hover">LET'S TALK</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Drawer -->
+    <div id="drawer" class="drawer" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="drawer-left">
+            <nav class="drawer-nav">
+                <a href="#about" class="drawer-link"><span class="drawer-link-index">01</span> ABOUT</a>
+                <a href="#expertise" class="drawer-link"><span class="drawer-link-index">02</span> EXPERTISE</a>
+                <a href="#projects" class="drawer-link"><span class="drawer-link-index">03</span> PROJECTS</a>
+                <a href="#what-i-build" class="drawer-link"><span class="drawer-link-index">04</span> WHAT I BUILD</a>
+                <a href="#contact" class="drawer-link"><span class="drawer-link-index">05</span> CONTACT</a>
+            </nav>
+        </div>
+        <div class="drawer-right desktop-only">
+            <button class="drawer-close cursor-hover" aria-label="Close menu">
+                <i class="ph ph-x"></i>
+            </button>
+            <div class="drawer-brand">
+                <div class="drawer-wordmark">NOOR MOHAMED</div>
+                <div class="drawer-tagline">"DESIGNING, DEVELOPING & SHIPPING FULL-STACK WEB APPS WITH AI."</div>
+            </div>
+            <div class="drawer-socials">
+                <a href="https://github.com/Noormohamed8056" target="_blank" rel="noopener noreferrer" class="social-pill cursor-hover"><i class="ph ph-github-logo"></i> GitHub</a>
+                <a href="https://www.linkedin.com/in/noor-mohamed07" target="_blank" rel="noopener noreferrer" class="social-pill cursor-hover"><i class="ph ph-linkedin-logo"></i> LinkedIn</a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=noormohammed6489@gmail.com" target="_blank" rel="noopener noreferrer" class="social-pill cursor-hover"><i class="ph ph-envelope-simple"></i> Email me</a>
+                <div style="display: flex; gap: 4px;">
+                    <a href="assets/files/Noor_Mohamed_Resume.pdf" target="_blank" rel="noopener noreferrer" class="social-pill cursor-hover"><i class="ph ph-file-pdf"></i> View Resume</a>
+                    <a href="assets/files/Noor_Mohamed_Resume.pdf" download="Noor_Mohamed_Resume.pdf" class="social-pill cursor-hover" aria-label="Download resume" style="padding: 0.5em 0.8em;"><i class="ph ph-download-simple" style="margin:0;"></i></a>
+                </div>
+            </div>
+            <div class="drawer-footer">© 2026 Noor Mohamed A.</div>
+        </div>
+        <button class="drawer-close-mobile mobile-only cursor-hover" aria-label="Close menu">
+            <i class="ph ph-x"></i>
+        </button>
+    </div>
+
+    <!-- Main Content wrapper -->
+    <div id="top" class="smooth-scroll-wrapper">
+        <main>
+            <section id="hero" class="hero-split theme-light">
+                <!-- Split Image -->
+                <div class="hero-split-image"></div>
+                
+                <!-- Split Content -->
+                <div class="hero-split-content">
+                    <div class="hero-split-eyebrow">HELLO, I'M NOOR MOHAMED A</div>
+                    <h1 class="hero-split-heading">
+                        <span class="split-line">FULL-STACK</span>
+                        <span class="split-line">& AI PRODUCT</span>
+                        <span class="split-line split-light">DEVELOPER</span>
+                    </h1>
+                    <p class="hero-split-desc">I build full-stack web applications, AI-powered systems and scalable digital products with clean code and modern architecture.</p>
+                    <div class="hero-split-actions">
+                        <a href="#projects" class="split-btn dark cursor-hover">View My Work ↗</a>
+                        <a href="assets/files/Noor_Mohamed_Resume.pdf" target="_blank" class="split-link cursor-hover">Download CV ↓</a>
+                    </div>
+                    <div class="hero-split-social">
+                        <a href="https://github.com/Noormohamed8056" target="_blank" class="cursor-hover"><i class="ph ph-github-logo"></i></a>
+                        <a href="https://www.linkedin.com/in/noor-mohamed07" target="_blank" class="cursor-hover"><i class="ph ph-linkedin-logo"></i></a>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=noormohammed6489@gmail.com" target="_blank" class="cursor-hover"><i class="ph ph-envelope-simple"></i></a>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Manifesto -->
+            <section class="manifesto theme-light">
+                <div class="manifesto-container">
+                    <h2 class="manifesto-text">
+                        I'M A COMPUTER SCIENCE STUDENT
+WHO BUILDS FULL-STACK WEB
+APPLICATIONS, AI-POWERED
+SYSTEMS AND SCALABLE DIGITAL
+PRODUCTS — CLEAN CODE, MODERN
+ARCHITECTURE, REAL-WORLD
+PROBLEMS.
+                    </h2>
+                </div>
+            </section>
+
+            <!-- About -->
+            <section id="about" class="about theme-light" data-reveal>
+                <div class="about-container">
+                    <div class="about-col-left">
+                        <div class="about-photo-wrap">
+                            <img src="assets/images/PROFESSIONAL%20IMAGE.png" alt="Noor Mohamed" class="about-photo" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 400 500\'><rect width=\'400\' height=\'500\' fill=\'url(%23grad)\'/><defs><linearGradient id=\'grad\' x1=\'0%\' y1=\'0%\' x2=\'100%\' y2=\'100%\'><stop offset=\'0%\' style=\'stop-color:%23ddd;stop-opacity:1\' /><stop offset=\'100%\' style=\'stop-color:%23f4f4f4;stop-opacity:1\' /></linearGradient></defs></svg>'">
+                        </div>
+                    </div>
+                    
+                    <div class="about-col-right" data-stagger>
+                        <p class="about-p">Hi, I'm <strong>Noor Mohamed</strong>, a Computer Science & Engineering student and Full-Stack Developer from Salem, Tamil Nadu.</p>
+                        <p class="about-p">My approach combines clean design, scalable architecture and problem-solving to build products that don't just look good — they solve real problems.</p>
+                        <p class="about-p">I've built full-stack platforms, completed Java full-stack and virtual internships, and I'm quick to learn new technologies and collaborate in teams. I'm currently seeking a <strong>Full-Stack Developer</strong> role.</p>
+                        
+                        <div class="about-principles">
+                            <div class="principle-row">
+                                <span class="principle-num">01</span>
+                                <span class="principle-text">Build End-to-End</span>
+                            </div>
+                            <div class="principle-row">
+                                <span class="principle-num">02</span>
+                                <span class="principle-text">Design for Scale</span>
+                            </div>
+                            <div class="principle-row">
+                                <span class="principle-num">03</span>
+                                <span class="principle-text">Solve Real Problems</span>
+                            </div>
+                        </div>
+
+                        <a href="#contact" class="hire-me-btn cursor-hover">
+                            <svg class="hire-me-text-ring" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <path id="circlePath" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="transparent" />
+                                <text><textPath href="#circlePath" startOffset="0%" fill="currentColor">HIRE ME • HIRE ME • HIRE ME • HIRE ME • </textPath></text>
+                            </svg>
+                            <i class="ph ph-arrow-down-right hire-me-arrow"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Core Expertise -->
+            <section id="expertise" class="expertise theme-dark">
+                <div class="expertise-bg-overlay"></div> <!-- Grain fallback -->
+                <h2 class="section-heading expertise-heading" data-reveal>CORE EXPERTISE</h2>
+                
+                <!-- LEGACY EXPERTISE (disabled)
+                <div class="expertise-container desktop-only">
+                    <div class="expertise-pin-area">
+                        <div class="expertise-content-left">
+                            <div class="expertise-list">
+                            </div>
+                        </div>
+                        
+                        <div class="expertise-content-right">
+                            <div class="expertise-capsule">
+                                <div class="capsule-blob"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="expertise-progress">
+                            <div class="progress-dot is-active"></div>
+                            <div class="progress-dot"></div>
+                            <div class="progress-dot"></div>
+                            <div class="progress-dot"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="expertise-mobile mobile-only">
+                </div>
+                -->
+
+                <div class="xp-intro" data-reveal>
+                    <div class="xp-intro-left">Where Code Meets Intelligence.</div>
+                    <div class="xp-intro-right">Full-stack development, data-driven AI and clean system design. I build reliable products with Java, React, Node.js and Python — and I keep learning by shipping real projects.</div>
+                </div>
+
+                <div class="xp-rows">
+                    <!-- Row 1 -->
+                    <article class="xp-row" data-side="left">
+                        <div class="xp-media">
+                            <img src="assets/images/expertise/xp-1.webp" width="1200" height="1200" alt="" decoding="async" onerror="this.outerHTML='<div style=\'width:100%;height:100%;background:radial-gradient(circle, %23333, %23111);display:flex;align-items:center;justify-content:center;color:%23888;font-size:14px;\'>Add xp-1.webp</div>'">
+                        </div>
+                        <div class="xp-copy">
+                            <div class="xp-line"></div>
+                            <h3 class="xp-title">FRONTEND ENGINEERING</h3>
+                            <p class="xp-desc">Building fast, responsive and accessible interfaces with React.js and modern JavaScript, focused on clean structure and a smooth user experience.</p>
+                            <div class="xp-chips">
+                                <span class="xp-chip">REACT.JS</span><span class="xp-chip">JAVASCRIPT (ES6+)</span><span class="xp-chip">HTML5</span><span class="xp-chip">CSS3</span><span class="xp-chip">RESPONSIVE UI</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Row 2 -->
+                    <article class="xp-row" data-side="right">
+                        <div class="xp-media">
+                            <img src="assets/images/expertise/xp-2.webp" width="1200" height="1200" alt="" decoding="async" onerror="this.outerHTML='<div style=\'width:100%;height:100%;background:radial-gradient(circle, %23333, %23111);display:flex;align-items:center;justify-content:center;color:%23888;font-size:14px;\'>Add xp-2.webp</div>'">
+                        </div>
+                        <div class="xp-copy">
+                            <div class="xp-line"></div>
+                            <h3 class="xp-title">BACKEND & DATABASES</h3>
+                            <p class="xp-desc">Designing secure, scalable server-side systems with Java and Node.js — REST APIs, authentication and relational data modelled in MySQL.</p>
+                            <div class="xp-chips">
+                                <span class="xp-chip">JAVA</span><span class="xp-chip">NODE.JS</span><span class="xp-chip">REST APIS</span><span class="xp-chip">MYSQL</span><span class="xp-chip">MONGO DB</span><span class="xp-chip">HIBERNATE</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Row 3 -->
+                    <article class="xp-row" data-side="left">
+                        <div class="xp-media">
+                            <img src="assets/images/expertise/xp-3.webp" width="1200" height="1200" alt="" decoding="async" onerror="this.outerHTML='<div style=\'width:100%;height:100%;background:radial-gradient(circle, %23333, %23111);display:flex;align-items:center;justify-content:center;color:%23888;font-size:14px;\'>Add xp-3.webp</div>'">
+                        </div>
+                        <div class="xp-copy">
+                            <div class="xp-line"></div>
+                            <h3 class="xp-title">AI & MACHINE LEARNING</h3>
+                            <p class="xp-desc">Turning data into insight: ML models that classify network anomalies and power real-time cyber-threat detection and awareness dashboards.</p>
+                            <div class="xp-chips">
+                                <span class="xp-chip">PYTHON</span><span class="xp-chip">MACHINE LEARNING</span><span class="xp-chip">AI APPLICATIONS</span><span class="xp-chip">DATA ANALYSIS</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Row 4 -->
+                    <article class="xp-row" data-side="right">
+                        <div class="xp-media">
+                            <img src="assets/images/expertise/xp-4.webp" width="1200" height="1200" alt="" decoding="async" onerror="this.outerHTML='<div style=\'width:100%;height:100%;background:radial-gradient(circle, %23333, %23111);display:flex;align-items:center;justify-content:center;color:%23888;font-size:14px;\'>Add xp-4.webp</div>'">
+                        </div>
+                        <div class="xp-copy">
+                            <div class="xp-line"></div>
+                            <h3 class="xp-title">DEVELOPER TOOLS & WORKFLOW</h3>
+                            <p class="xp-desc">Building and managing modern development workflows with Git, GitHub, APIs, deployment tools and cloud platforms — with a focus on efficient development and maintainable projects.</p>
+                            <div class="xp-chips">
+                                <span class="xp-chip">GIT</span><span class="xp-chip">GITHUB</span><span class="xp-chip">REST APIS</span><span class="xp-chip">POSTMAN</span><span class="xp-chip">CLOUD</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Projects -->
+            <section id="projects" class="projects theme-light">
+                <div class="projects-container">
+                    <div class="section-heading-wrap" data-reveal>
+                        <h2 class="section-heading" style="margin-bottom:1rem;">FEATURED PROJECTS</h2>
+                        <p style="text-align:center; color:var(--ink-soft); font-weight:500;">Real applications built with a focus on function, scale and clean UX</p>
+                    </div>
+
+                    <div class="work-bg-text-wrap desktop-only">
+                        <div class="work-bg-text">WORK</div>
+                    </div>
+                    <div class="work-bg-text-wrap mobile-only" style="position:relative; top:0; margin-bottom:2rem; text-align:center;">
+                        <div class="work-bg-text" style="font-size:30vw;">WORK</div>
+                    </div>
+
+                    <div class="projects-stack">
+                        <!-- Project 1 -->
+                        <div class="project-card">
+                            <div class="project-info">
+                                <div class="project-index">01 &mdash; AI-BASED PET WELLNESS SYSTEM</div>
+                                <h3 class="project-title">Full-stack pet care platform</h3>
+                                <p class="project-desc">Secure user authentication, pet profile management, automated health-tracking reminders, appointment scheduling and an integrated marketplace with payment processing. Delivered across 4 milestones (Infosys Springboard).</p>
+                                <div class="project-tags">
+                                    <span class="project-tag">HTML</span><span class="project-tag">CSS</span><span class="project-tag">JS</span><span class="project-tag">REACT</span><span class="project-tag">NODE</span><span class="project-tag">MYSQL</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://ai-pet-wellness-management-system.vercel.app/" class="btn-primary" target="_blank" rel="noopener noreferrer">Live Preview ↗</a>
+                                    <a href="https://github.com/Noormohamed8056/AI-pet-wellness-management-system" class="btn-primary" target="_blank" rel="noopener noreferrer" style="background-color:var(--line-light); color:var(--ink);">Source Code ↗</a>
+                                </div>
+                            </div>
+                            <div class="project-visual">
+                                <div class="browser-frame">
+                                    <div class="browser-header">
+                                        <div class="browser-dots"><span></span><span></span><span></span></div>
+                                    </div>
+                                    <img src="assets/images/ai-pet-wellness-management-system.png" alt="Pet Wellness Dashboard" class="project-img" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 800 500\'><rect width=\'800\' height=\'500\' fill=\'#f4f4f4\'/><text x=\'400\' y=\'250\' font-family=\'Arial\' font-size=\'20\' text-anchor=\'middle\' fill=\'#999\'>Screenshot: Pet Wellness App</text></svg>'">
+                                </div>
+                            </div>
+                            <a href="https://ai-pet-wellness-management-system.vercel.app/" class="project-link-overlay" target="_blank" aria-label="View Project"></a>
+                        </div>
+
+                        <!-- Project 2 -->
+                        <div class="project-card">
+                            <div class="project-info">
+                                <div class="project-index">02 &mdash; AI-DRIVEN CYBER THREAT MONITOR</div>
+                                <h3 class="project-title">Real-time threat detection</h3>
+                                <p class="project-desc">Real-time cyber-threat detection and monitoring. ML models classify network anomalies and deliver actionable security insights through a dashboard.</p>
+                                <div class="project-tags">
+                                    <span class="project-tag">PYTHON</span><span class="project-tag">MACHINE LEARNING</span><span class="project-tag">SECURITY</span><span class="project-tag">WEB</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://cyber-threat-monitoring-system.vercel.app/" class="btn-primary" target="_blank" rel="noopener noreferrer">Live Preview ↗</a>
+                                    <a href="https://github.com/Noormohamed8056/cyber-threat-monitoring-system" class="btn-primary" target="_blank" rel="noopener noreferrer" style="background-color:var(--line-light); color:var(--ink);">Source Code ↗</a>
+                                </div>
+                            </div>
+                            <div class="project-visual">
+                                <div class="browser-frame">
+                                    <div class="browser-header">
+                                        <div class="browser-dots"><span></span><span></span><span></span></div>
+                                    </div>
+                                    <img src="assets/images/cyber-threat-monitoring-system.png" alt="Cyber Threat Dashboard" class="project-img" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 800 500\'><rect width=\'800\' height=\'500\' fill=\'#f4f4f4\'/><text x=\'400\' y=\'250\' font-family=\'Arial\' font-size=\'20\' text-anchor=\'middle\' fill=\'#999\'>Screenshot: Cyber Threat Dashboard</text></svg>'">
+                                </div>
+                            </div>
+                            <a href="https://cyber-threat-monitoring-system.vercel.app/" class="project-link-overlay" target="_blank" aria-label="View Project"></a>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Journey -->
+            <section class="journey theme-light">
+                <div class="journey-container">
+                    <h2 class="section-heading" data-reveal>JOURNEY</h2>
+                    
+                    <div class="timeline-wrap">
+                        <div class="timeline-line"></div>
+                        <div class="timeline-line-progress"></div>
+                        
+                        <!-- Item 1 -->
+                        <div class="timeline-item left" data-reveal>
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-date">Dec 2025</div>
+                                <h3 class="timeline-title">Java Full Stack Development Intern</h3>
+                                <div class="timeline-org">LAX360 Pvt Ltd</div>
+                                <p class="timeline-desc">Built real-world application modules end-to-end; hands-on with device integration and real-time data communication.</p>
+                            </div>
+                        </div>
+                        <!-- Item 2 -->
+                        <div class="timeline-item right" data-reveal>
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-date">Dec 2025 – Feb 2026</div>
+                                <h3 class="timeline-title">Virtual Intern</h3>
+                                <div class="timeline-org">Infosys Springboard</div>
+                                <p class="timeline-desc">Built the AI-Based Pet Wellness system: authentication, appointment scheduling, marketplace with payments.</p>
+                            </div>
+                        </div>
+                        <!-- Item 3 -->
+                        <div class="timeline-item left" data-reveal>
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-date">2023–2027</div>
+                                <h3 class="timeline-title">B.E. Computer Science & Engineering</h3>
+                                <div class="timeline-org">Mahendra Engineering College (Autonomous)</div>
+                                <p class="timeline-desc">CGPA 8.81 / 10</p>
+                            </div>
+                        </div>
+                        <!-- Item 4 -->
+                        <div class="timeline-item right" data-reveal>
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-date">2022–2023</div>
+                                <h3 class="timeline-title">HSC</h3>
+                                <div class="timeline-org">St. John's Matriculation Hr. Sec. School</div>
+                                <p class="timeline-desc">70%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 1B: Certificates -->
+                <section id="cert" class="cert theme-dark">
+                    <div class="cert-container">
+                        <div class="cert-header" data-reveal>
+                            <div class="cert-eyebrow">CERTIFICATIONS & ACHIEVEMENTS</div>
+                            <h2 class="cert-title">LEARNING BACKED BY
+REAL-WORLD EXPERIENCE.</h2>
+                            <p class="cert-desc">Building my skills through technical certifications, internships, and hands-on projects across Java, Full-Stack Development, AI, Cloud, and Data technologies.</p>
+                            <a href="achievements.html" id="achievements-link" class="cert-btn cursor-hover">
+                                View All Achievements <span class="btn-arrow">&rarr;</span>
+                            </a>
+                        </div>
+                        
+                        <div class="cert-wall-wrap">
+                            <div class="cert-wall" id="cert-wall-grid">
+                                <div class="cert-col cert-col-1"></div>
+                                <div class="cert-col cert-col-2"></div>
+                                <div class="cert-col cert-col-3"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="cert-lightbox" class="cert-lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+                        <div class="cert-lightbox-bg cursor-hover"></div>
+                        <button class="cert-lightbox-close cursor-hover" aria-label="Close lightbox"><i class="ph ph-x"></i></button>
+                        <div class="cert-lightbox-content"></div>
+                    </div>
+                </section>
+
+                <!-- Phase 1C: Tech Stack -->
+                <section id="tech-stack" class="stack theme-dark" aria-label="Technologies I work with">
+                    <div class="stack-container">
+                        <div class="stack-eyebrow">TECH STACK & ECOSYSTEM</div>
+                        
+                        <div class="stack-marquee-wrap">
+                            <div class="stack-track stack-track-1" aria-hidden="true"></div>
+                            <div class="stack-track stack-track-2" aria-hidden="true"></div>
+                        </div>
+                    </div>
+                </section>
+
+            <!-- What I Build -->
+            <section id="what-i-build" class="what-i-build theme-dark">
+                <div class="expertise-bg-overlay"></div>
+                <div class="wib-container">
+                    <div class="section-heading-wrap" data-reveal>
+                        <h2 class="section-heading" style="margin-bottom:1rem;">WHAT I BUILD</h2>
+                        <p style="text-align:center; color:var(--on-dark-soft); font-weight:500;">Practical products built end-to-end — from database to interface</p>
+                    </div>
+
+                    <div class="accordion-wrap" data-stagger>
+                        <!-- Items populated via JS for easier state management or hardcoded. I will hardcode for SEO. -->
+                        <div class="acc-item is-open">
+                            <button class="acc-btn cursor-hover" aria-expanded="true" aria-controls="acc-1">
+                                <span class="acc-num">01</span>
+                                <span class="acc-title">Full-Stack Web Applications</span>
+                                <span class="acc-icon"><i class="ph ph-plus"></i></span>
+                            </button>
+                            <div class="acc-content-wrap" id="acc-1" style="height: auto;">
+                                <div class="acc-content">
+                                    <p>End-to-end apps with auth, dashboards and payments.</p>
+                                    <div class="exp-chips" style="margin-top:1rem;">
+                                        <span class="exp-chip">React</span><span class="exp-chip">Node.js</span><span class="exp-chip">Full-Stack</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="acc-item">
+                            <button class="acc-btn cursor-hover" aria-expanded="false" aria-controls="acc-2">
+                                <span class="acc-num">02</span>
+                                <span class="acc-title">REST APIs & Backend Systems</span>
+                                <span class="acc-icon"><i class="ph ph-plus"></i></span>
+                            </button>
+                            <div class="acc-content-wrap" id="acc-2">
+                                <div class="acc-content">
+                                    <p>Node.js / Java services with MySQL for robust data management.</p>
+                                    <div class="exp-chips" style="margin-top:1rem;">
+                                        <span class="exp-chip">Java</span><span class="exp-chip">Express</span><span class="exp-chip">MySQL</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="acc-item">
+                            <button class="acc-btn cursor-hover" aria-expanded="false" aria-controls="acc-3">
+                                <span class="acc-num">03</span>
+                                <span class="acc-title">AI-Powered Features</span>
+                                <span class="acc-icon"><i class="ph ph-plus"></i></span>
+                            </button>
+                            <div class="acc-content-wrap" id="acc-3">
+                                <div class="acc-content">
+                                    <p>ML models and smart automation seamlessly integrated inside real products.</p>
+                                    <div class="exp-chips" style="margin-top:1rem;">
+                                        <span class="exp-chip">Python</span><span class="exp-chip">Machine Learning</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="acc-item">
+                            <button class="acc-btn cursor-hover" aria-expanded="false" aria-controls="acc-4">
+                                <span class="acc-num">04</span>
+                                <span class="acc-title">Real-Time & IoT Data Apps</span>
+                                <span class="acc-icon"><i class="ph ph-plus"></i></span>
+                            </button>
+                            <div class="acc-content-wrap" id="acc-4">
+                                <div class="acc-content">
+                                    <p>Device integration and live data communication architectures.</p>
+                                    <div class="exp-chips" style="margin-top:1rem;">
+                                        <span class="exp-chip">IoT</span><span class="exp-chip">WebSockets</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="acc-item">
+                            <button class="acc-btn cursor-hover" aria-expanded="false" aria-controls="acc-5">
+                                <span class="acc-num">05</span>
+                                <span class="acc-title">Responsive Frontends</span>
+                                <span class="acc-icon"><i class="ph ph-plus"></i></span>
+                            </button>
+                            <div class="acc-content-wrap" id="acc-5">
+                                <div class="acc-content">
+                                    <p>Fast, accessible, and dynamic React and vanilla UIs with premium aesthetics.</p>
+                                    <div class="exp-chips" style="margin-top:1rem;">
+                                        <span class="exp-chip">UI/UX</span><span class="exp-chip">GSAP</span><span class="exp-chip">Vanilla JS</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Connect / Footer -->
+            <footer id="contact" class="site-footer theme-dark">
+                <div class="expertise-bg-overlay"></div>
+                <div class="footer-container">
+                    <div class="footer-cta" data-reveal>
+                        <div class="eyebrow">CONNECT ACROSS PLATFORMS</div>
+                        <h2 class="footer-heading">
+                            LET'S BUILD SOMETHING 
+                            <span class="word-rotator">
+                                <span class="rotator-word active">GREAT</span>
+                                <span class="rotator-word">EPIC</span>
+                                <span class="rotator-word">BOLD</span>
+                                <span class="rotator-word">FRESH</span>
+                                <span class="rotator-word">SMART</span>
+                            </span> 
+                            TOGETHER
+                        </h2>
+                        <p class="footer-sub">Open to full-stack roles, freelance projects and ambitious ideas. Let's turn yours into something real.</p>
+                        
+                        <div class="footer-pills connect-section-buttons">
+                            <a href="https://github.com/Noormohamed8056" target="_blank" rel="noopener noreferrer" class="social-pill cursor-hover"><i class="ph ph-github-logo"></i> GitHub</a>
+                            <a href="https://www.linkedin.com/in/noor-mohamed07" target="_blank" rel="noopener noreferrer" class="social-pill cursor-hover"><i class="ph ph-linkedin-logo"></i> LinkedIn</a>
+                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=noormohammed6489@gmail.com" target="_blank" rel="noopener noreferrer" class="social-pill cursor-hover"><i class="ph ph-envelope-simple"></i> Email me</a>
+                            <div style="display: flex; gap: 4px;">
+                                <a href="assets/files/Noor_Mohamed_Resume.pdf" target="_blank" rel="noopener noreferrer" class="social-pill cursor-hover"><i class="ph ph-file-pdf"></i> View Resume</a>
+                                <a href="assets/files/Noor_Mohamed_Resume.pdf" download="Noor_Mohamed_Resume.pdf" class="social-pill cursor-hover" aria-label="Download resume" style="padding: 0.5em 0.8em;"><i class="ph ph-download-simple" style="margin:0;"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer-bottom-grid">
+                        <div class="footer-col">
+                            <div class="footer-col-title">QUICK LINKS</div>
+                            <div class="footer-links">
+                                <a href="#about" class="cursor-hover">About Me</a>
+                                <a href="#expertise" class="cursor-hover">Expertise</a>
+                                <a href="#projects" class="cursor-hover">Projects</a>
+                                <a href="#what-i-build" class="cursor-hover">What I Build</a>
+                                <a href="#contact" class="cursor-hover">Contact</a>
+                            </div>
+                        </div>
+                        
+                        <div class="footer-col col-center">
+                            <button class="footer-top-btn cursor-hover" aria-label="Scroll to top" onclick="lenis ? lenis.scrollTo(0, {duration: 1.2}) : window.scrollTo(0,0)">
+                                <i class="ph ph-arrow-up"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="footer-col col-right">
+                            <div class="footer-org">NOOR MOHAMED PORTFOLIO</div>
+                            <div class="footer-copy">© 2026 Noor Mohamed A. All rights reserved.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="giant-wordmark-wrap">
+                    <div class="giant-wordmark" aria-hidden="true"><span>NOOR MOHAMED</span></div>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-top-btn" aria-label="Scroll to top">
+        <i class="ph ph-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="assets/js/icons.js"></script>
+    <script src="assets/js/main.js?v=38"></script>
+
+    <!-- Page Transition Overlay -->
+    <div id="page-transition-overlay" style="position: fixed; inset: 0; background: black; z-index: 9999; opacity: 0; pointer-events: none; transition: opacity 0.4s ease;"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.querySelector('.cert-btn');
+            if (btn) {
+                // Update href just in case
+                btn.href = 'achievements.html';
+                btn.removeAttribute('target');
+                btn.removeAttribute('rel');
+                
+                const overlay = document.getElementById('page-transition-overlay');
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    if(overlay) {
+                        overlay.style.pointerEvents = 'auto';
+                        overlay.style.opacity = '1';
+                        setTimeout(() => {
+                            window.location.href = btn.href;
+                        }, 400);
+                    } else {
+                        window.location.href = btn.href;
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
